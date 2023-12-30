@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    overflow:-moz-hidden-unscrollable;
+    background-color: black;
+}
+.main{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    color: ghostwhite;
+}
+.image {
+    position: relative;
+    width: 400px;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.burst-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.burst1 {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 90%;
+    transform: translateZ(0);
+}
+
+.burst2 {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10%;
+    transform: translateZ(0);
+}
+
+.firework {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 40px solid #f00; /* Initial color, will be overridden by particles */
+    transform-origin: bottom center;
+    animation: explode 1.5s ease-out;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    animation: explodeParticle 1.5s ease-out;
+}
+
+@keyframes explode {
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes explodeParticle {
+    to {
+        transform: translateY(-900px) rotate(1440deg) scaleX(10) scaleY(10);
+        opacity: 0;
+    }
+}
